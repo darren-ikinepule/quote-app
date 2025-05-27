@@ -1,0 +1,74 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   overflow: hidden;
+  
+}
+.inspirational-container {
+  position: relative;
+  width: 100vw;
+  min-height: 90vh;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(2px) brightness(0.7);
+}
+
+.inspirational-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  padding: 40px 30px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.inspirational-title {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #2e8b57;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 8px #fff;
+}
+
+.inspirational-quote {
+  font-size: 1.5em;
+  color: #333;
+  margin: 30px 0;
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.inspirational-btn {
+  background: #2e8b57;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.inspirational-btn:hover {
+  background: #20b2aa;
+  color: #fff;
+  transform: scale(1.08);
+}
