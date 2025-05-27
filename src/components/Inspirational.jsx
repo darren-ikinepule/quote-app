@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import inspirationalQuotes from "../scripts/inspirational";
 import "../styles/inspirational.css";
 
+const response = await fetch("https://localhost:3000/quotes");
+const quotes = await response.json();
+
 function getRandomQuote(current) {
   let quote;
   do {
