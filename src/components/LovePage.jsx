@@ -12,13 +12,37 @@ function getRandomQuote(current) {
 
 function LovePage() {
   const [quote, setQuote] = useState(getRandomQuote());
+  const [roseShower, setRoseShower] = useState(false);
 
   const handleNewQuote = () => {
     setQuote(getRandomQuote(quote));
   };
 
+  const handleRoseClick = () => {
+    setRoseShower(true);
+    setTimeout(() => setRoseShower(false), 2000); // Show roses for 2 seconds
+  };
+
+  // Generate 30 falling roses with random positions
+  const roses = Array.from({ length: 30 }).map((_, i) => (
+    <span
+      key={i}
+      className="falling-rose"
+      style={{
+        left: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random()}s`,
+        fontSize: `${16 + Math.random() * 16}px`,
+      }}
+      role="img"
+      aria-label="falling rose"
+    >
+      🌹
+    </span>
+  ));
+
   return (
     <div className="love-container">
+      {roseShower && <div className="rose-shower">{roses}</div>}
       <div className="love-decor top">
         <span role="img" aria-label="flower">🌸</span>
         <span role="img" aria-label="heart">❤️</span>
@@ -31,7 +55,14 @@ function LovePage() {
       </h2>
       <div className="love-quote-box">
         <span className="love-side-decor left">
-          <span role="img" aria-label="flower">🌹</span>
+          <span
+            role="img"
+            aria-label="flower"
+            style={{ cursor: "pointer" }}
+            onClick={handleRoseClick}
+          >
+            🌹
+          </span>
           <span role="img" aria-label="heart">💞</span>
         </span>
         <p className="love-quote">"{quote}"</p>
