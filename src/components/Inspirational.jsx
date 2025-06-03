@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import inspirationalQuotes from "../scripts/inspirational";
 import "../styles/inspirational.css";
 
-const response = await fetch("https://localhost:3000/quotes");
-const quotes = await response.json();
+// const response = await fetch("https://localhost:3000/quotes");
+// const quotes = await response.json();
 
 function getRandomQuote(current) {
   let quote;
@@ -23,7 +23,7 @@ function Inspirational() {
   return (
     <div className="inspirational-container">
       {/* Background video */}
-      // ...existing code...
+      
       <video
         className="background-video"
         autoPlay
@@ -32,7 +32,7 @@ function Inspirational() {
         playsInline
         poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
       >
-        <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
