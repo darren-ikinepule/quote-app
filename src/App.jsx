@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Inspirational from "./components/Inspirational";
 import LovePage from "./components/LovePage";
@@ -12,7 +12,7 @@ function AppContent() {
   const hideNavbar = location.pathname === "/";
 
   return (
-    <>
+    <div className="app-container">
       {!hideNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ function AppContent() {
        
         
       </Routes>
-    </>
+    </div>
   );
 }
 

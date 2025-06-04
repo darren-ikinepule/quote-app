@@ -1,74 +1,140 @@
+/* Main container */
 .joker-container {
-  background: linear-gradient(45deg, #ffc107, #ff5722, #e91e63, #9c27b0);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: white;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: #222;
   text-align: center;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 80%;
-  margin: 2rem auto;
+  padding: 2rem 1.2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  max-width: 400px;
+  min-width: 320px;
+  min-height: 420px; /* Ensures container height stays consistent */
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  transition: background 0.5s;
+  box-sizing: border-box;
+}
+/* Joke content */
+.joke-content {
+  background: #fff;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 12px;
+  padding: 1.1rem 1rem;
+  box-shadow: 0 1px 4px rgba(60,60,60,0.06);
+  width: 100%;
+  max-width: 340px;
+  min-height: 80px;      /* <-- Add this line */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  animation: pop-in 0.5s;
+  transition: min-height 0.2s;
+}
+/* Setup and punchline */
+.joke-setup {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  text-shadow: none;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.joke-punchline {
+  font-size: 1.08rem;
+  color: #00897b;
+  font-style: italic;
+  margin-bottom: 0;
+  text-shadow: none;
 }
 
-.joker-container div {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+/* Messages */
+.joke-message {
+  font-size: 1.05rem;
+  color: #7b1fa2;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin: 0;
+  animation: bounce 1.2s infinite alternate;
 }
 
-.joker-container p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.joke-loading {
+  font-size: 0.98rem;
+  color: #0288d1;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  margin: 0;
+  animation: pulse 1s infinite alternate;
 }
 
-.joker-container button {
-  background-color: #4caf50;
-  color: white;
-  padding: 1rem 2rem;
+/* Button */
+.joke-btn {
+  background: linear-gradient(90deg, #1976d2 40%, #64b5f6 100%);
+  color: #fff;
+  padding: 0.9rem 2rem;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  margin: 0.5rem 0 0 0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.2s, transform 0.2s, font-size 0.2s;
+  outline: none;
+  width: 100%;
+  max-width: 340px;
+}
+.joke-btn:hover {
+  background: linear-gradient(90deg, #1565c0 40%, #42a5f5 100%);
+  transform: scale(1.04);
+  font-size: 1.12rem;
 }
 
-.joker-container button:hover {
-  background-color: #388e3c;
-  transform: scale(1.05);
+/* Animations */
+@keyframes pop-in {
+  0% { transform: scale(0.96); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-6px);}
+}
+@keyframes pulse {
+  0% { opacity: 0.7;}
+  100% { opacity: 1;}
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .joker-container {
-    max-width: 95%;
-    padding: 1.5rem;
+    max-width: 98vw;
+    min-height: 340px;
+    padding: 1rem 0.3rem;
+    border-radius: 10px;
+    gap: 0.8rem;
   }
-
-  .joker-container p {
+  .joke-content,
+  .joke-btn {
+    max-width: 98vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .joke-setup,
+  .joke-punchline {
     font-size: 1rem;
   }
-
-  .joker-container button {
+  .joke-btn {
     font-size: 1rem;
-    padding: 0.8rem 1.6rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 7px;
+  }
+  .joke-message,
+  .joke-loading {
+    font-size: 0.95rem;
   }
 }

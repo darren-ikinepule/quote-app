@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import funnyQuotes from "../scripts/funnyQuotes";
 import "../styles/funny-quotes.css"; 
 
+const emojiSets = [
+  ["🐶", "🦊", "🐼", "🐰"],
+  ["😂", "🤣", "😜", "😹"],
+  ["🦄", "🐸", "🐵", "🦥"]
+];
+
 function getRandomQuote(current) {
   let quote;
   do {
@@ -10,11 +16,21 @@ function getRandomQuote(current) {
   return quote;
 }
 
+function getRandomEmojiSet(currentSetIdx) {
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * emojiSets.length);
+  } while (idx === currentSetIdx && emojiSets.length > 1);
+  return idx;
+}
+
 function FunnyQuotes() {
   const [quote, setQuote] = useState(getRandomQuote());
+  const [emojiSetIdx, setEmojiSetIdx] = useState(0);
 
   const handleNewQuote = () => {
     setQuote(getRandomQuote(quote));
+    setEmojiSetIdx(getRandomEmojiSet(emojiSetIdx));
   };
 
   return (
@@ -25,16 +41,17 @@ function FunnyQuotes() {
         <span className="mini-bounce" role="img" aria-label="laughing monkey">🙊</span>
       </div>
       <p className="quote-text">{quote}</p>
+      
+      <div className="static-emojis-row">
+        {emojiSets[emojiSetIdx].map((emoji, i) => (
+          <span key={i} role="img" aria-label={`emoji-${i}`}>{emoji}</span>
+        ))}
+      </div>
       <button className="quote-btn" onClick={handleNewQuote}>
         New Quote
       </button>
-      <div className="static-emojis-row">
-        <span role="img" aria-label="laughing dog">🐶</span>
-        <span role="img" aria-label="laughing fox">🦊</span>
-        <span role="img" aria-label="laughing panda">🐼</span>
-        <span role="img" aria-label="laughing rabbit">🐰</span>
-      </div>
     </div>
+    
   );
 }
 
