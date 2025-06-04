@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import funnyQuotes from "../scripts/quotes";
-import "../styles/quotePage.css"; // Assuming you have a CSS file for styling
+import funnyQuotes from "../scripts/funnyQuotes";
+import "../styles/funny-quotes.css"; 
 
 function getRandomQuote(current) {
   let quote;
@@ -10,7 +10,7 @@ function getRandomQuote(current) {
   return quote;
 }
 
-function QuotePage() {
+function FunnyQuotes() {
   const [quote, setQuote] = useState(getRandomQuote());
 
   const handleNewQuote = () => {
@@ -38,4 +38,4 @@ function QuotePage() {
   );
 }
 
-export default QuotePage;
+export default FunnyQuotes;

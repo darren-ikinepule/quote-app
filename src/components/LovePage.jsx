@@ -23,8 +23,8 @@ function LovePage() {
     setTimeout(() => setRoseShower(false), 2000); // Show roses for 2 seconds
   };
 
-  // Generate 30 falling roses with random positions
-  const roses = Array.from({ length: 30 }).map((_, i) => (
+  // Generate 50 falling roses with random positions
+  const roses = Array.from({ length: 50 }).map((_, i) => (
     <span
       key={i}
       className="falling-rose"

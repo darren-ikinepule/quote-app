@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import QuotePage from "./components/QuotePage";
 import Inspirational from "./components/Inspirational";
 import LovePage from "./components/LovePage";
+import FunnyQuotes from "./components/FunnyQuotes";
 // ...other imports
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<QuotePage />} />
+        <Route path="/" element={<FunnyQuotes />} />
         <Route path="/inspirational" element={<Inspirational />} />
         <Route path="/love" element={<LovePage />} />
         {/* other routes */}
