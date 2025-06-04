@@ -22,7 +22,7 @@ body {
   top: 0;
   left: 0;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   object-fit: cover;
   z-index: 0;
   filter: blur(2px) brightness(0.7);
