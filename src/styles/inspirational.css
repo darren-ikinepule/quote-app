@@ -1,38 +1,17 @@
-
-body {
+.inspirational-container {
+  position: relative;
+  width: 100vw;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-   overflow: hidden;
-  
-}
-.inspirational-container {
-  position: relative;
-  width: 100vw;
-  min-height: 90vh;
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100vw;
-  min-height: 90vh;
-  object-fit: cover;
-  z-index: 0;
-  filter: blur(2px) brightness(0.7);
 }
 
 .inspirational-content {
   position: relative;
   z-index: 1;
-  background: rgba(255,255,255,0.85);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
   padding: 40px 30px;
   max-width: 600px;
   text-align: center;
@@ -40,7 +19,7 @@ body {
 }
 
 .inspirational-title {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: #2e8b57;
   font-size: 2em;
   margin-bottom: 20px;
@@ -51,7 +30,7 @@ body {
   font-size: 1.5em;
   color: #333;
   margin: 30px 0;
-  font-family: 'Caveat', cursive, sans-serif;
+  font-family: "Caveat", cursive, sans-serif;
 }
 
 .inspirational-btn {
@@ -63,8 +42,8 @@ body {
   font-size: 1.1em;
   cursor: pointer;
   font-family: inherit;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
 .inspirational-btn:hover {

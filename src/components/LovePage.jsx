@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import loveQuotes from "../scripts/love-page";
 import "../styles/love-page.css";
 
-function getRandomQuote(current) {
+function getLoveQuote(current) {
   let quote;
   do {
     quote = loveQuotes[Math.floor(Math.random() * loveQuotes.length)];
@@ -11,11 +11,11 @@ function getRandomQuote(current) {
 }
 
 function LovePage() {
-  const [quote, setQuote] = useState(getRandomQuote());
+  const [quote, setQuote] = useState(getLoveQuote());
   const [roseShower, setRoseShower] = useState(false);
 
   const handleNewQuote = () => {
-    setQuote(getRandomQuote(quote));
+    setQuote(getLoveQuote(quote));
   };
 
   const handleRoseClick = () => {

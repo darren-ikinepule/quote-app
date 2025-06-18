@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/home-page.css"; 
-import funme1 from "../assets/funme1.jpg"; // <-- import the image
+import "../styles/home-page.css";
+import funme2 from "../assets/funme2.jpg"; // Import the image
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <img src={funme1} alt="Home" className="home-image" />
+      <img src={funme2} alt="Background" className="home-image" />
       <button className="home-btn" onClick={handleClick}>
         Lets Go
       </button>

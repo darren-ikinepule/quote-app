@@ -1,43 +1,39 @@
 .navbar {
-  width: 100%;
-  background: #ff4e50;
-  padding: 16px 0;
+  width: 100%; /* Make it responsive */
+  min-width: 180px; /* Minimum width */
+  padding: 8px; /* Reduced padding */
   display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-bottom: 32px;
-  border-radius: 0 0 16px 16px;
-}
-
-.navbar {
-  position: relative;
-  z-index: 10;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: center;
+  margin: 0 auto 16px; /* Reduced margin */
+  border-radius: 0 0 8px 8px; /* Reduced border-radius */
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #ff6b6b, #f9d423);
 }
 
 .nav-link {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1em; /* Adjusted font size */
   text-decoration: none;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   transition: color 0.2s;
   font-weight: bold;
+  text-align: center;
+  padding: 6px; /* Reduced padding */
+  width: calc(33.33% - 8px); /* Adjust width for 3 items per row */
+  margin-bottom: 8px; /* Reduced margin */
+  box-sizing: border-box;
 }
 
 .nav-link:hover {
   color: #f9d423;
 }
 
-.quote-container {
-  background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  padding: 40px 30px;
-  max-width: 500px;
-  margin: 60px auto;
-  text-align: center;
-  animation: popIn 0.7s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Media Query for smaller screens */
+@media (max-width: 380px) {
+  .nav-link {
+    width: calc(50% - 8px); /* Two items per row on smaller screens */
+    font-size: 0.9em; /* Further reduce font size */
+  }
 }
