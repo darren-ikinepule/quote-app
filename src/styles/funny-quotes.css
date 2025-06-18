@@ -4,7 +4,7 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   padding: 40px 30px;
   max-width: 500px;
-  margin: 60px auto;
+  margin: auto;
   text-align: center;
   animation: popIn 0.7s;
   display: flex;
@@ -28,7 +28,7 @@
 .quote-text {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: black;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px #ff4e50;
 }

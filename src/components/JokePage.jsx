@@ -1,7 +1,5 @@
 import { useState } from "react";
-import "../styles/jokes.css"; 
-
-
+import "../styles/jokes.css";
 
 const url = "https://official-joke-api.appspot.com/random_joke";
 
@@ -24,17 +22,20 @@ const JokePage = () => {
 
   return (
     <>
-      
       <div className="joker-container">
-        {joke.setup && (
-          <div>
-            <p>{`${joke.setup}`}</p>
-            <p>{`${joke.punchline}`}</p>
-          </div>
-        )}
-        <p>{isFirstRender && "Click for a joke"}</p>
-        <p>{isLoading && "Loading..."}</p>
-        <button onClick={fetchRandomJoke}>New Joke!</button>
+        <div className="joke-content">
+          {joke.setup ? (
+            <>
+              <p className="joke-setup">{joke.setup}</p>
+              <p className="joke-punchline">{joke.punchline}</p>
+            </>
+          ) : null}
+        </div>
+        <p className="joke-message">{isFirstRender && "Click for a joke"}</p>
+        <p className="joke-loading">{isLoading && "Loading..."}</p>
+        <button className="joke-btn" onClick={fetchRandomJoke}>
+          New Joke!
+        </button>
       </div>
     </>
   );
