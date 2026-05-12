@@ -3,7 +3,7 @@
 .home-container {
   width: 100%; /* Make it responsive */
   max-width: 380px; /* Limit the maximum width */
-  min-height: 100vh; /* Full viewport height */
+  min-height: 90vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
